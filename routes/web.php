@@ -20,3 +20,6 @@ Route::get('/contact', 'PagesController@contact');
 Route::get('/upload', 'UploadController@uploadForm');
 Route::post('/upload', 'UploadController@uploadSubmit');
 
+
+Auth::routes();
+Route::get('/dashboard', 'DashboardController@index');
