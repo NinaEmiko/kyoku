@@ -16,3 +16,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/help', 'PagesController@help');
 Route::get('/contact', 'PagesController@contact');
+
+Route::get('/upload', 'UploadController@uploadForm');
+Route::post('/upload', 'UploadController@uploadSubmit');
+
