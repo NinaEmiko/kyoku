@@ -2,7 +2,7 @@
     {{ csrf_field() }}
     Project name:
     <br />
-    <input type="text" name="name" />
+    <input type="text" name="title" />
     <br /><br />
     Project tracks (can attach up to two)
     <br />

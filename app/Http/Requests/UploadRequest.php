@@ -28,21 +28,18 @@ class UploadRequest extends FormRequest
         ];
         $tracks = count($this->input('tracks'));
         foreach(range(0, $tracks) as $index) {
-            $rules['photos.' . $index] = 'required|mimes:wav|max:2000';
+        //    $rules['photos.' . $index] = 'audio|mimes:wav,mpga|max:96000';
         }
 
         $messages = array(
             'upload_count' => 'The :attribute field cannot be more than 2.',
         );
-        
+
         $validator = Validator::make(
             Input::all(),
             array('file' => array('upload_count:file,2')), // first param is field name and second is max count
             $messages
         );
-        
-        PHP
-
 
     @if (count($errors) > 0)
         <ul>
@@ -51,6 +48,7 @@ class UploadRequest extends FormRequest
             @endforeach
         </ul>
     @endif
+
 
     <form action="/upload" method="post" enctype="multipart/form-data">
     ...
