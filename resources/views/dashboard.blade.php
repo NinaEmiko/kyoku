@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    @include('inc.projects')
                 </div>
             </div>
         </div>

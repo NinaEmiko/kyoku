@@ -8,13 +8,15 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <script src="{{ asset('js/app.js') }}" defer></script>
         <link rel='stylesheet' href="{{asset('css/app.css')}}">
         <title>{{config('app.name', 'Kyoku')}}</title>
     </head>
     <body>
         @include('inc.navbar')
         <div class='container'>
-        @yield('content')
+          @include('inc.messages')
+          @yield('content')
         </div>
     </body>
 </html>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Project;
+//use App\Http\Controllers\ProjectController;
 
 class DashboardController extends Controller
 {
@@ -23,6 +25,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $projects = Project::orderBy('created_at', 'desc')->get();
+        return view('dashboard')->with('projects', $projects);;
     }
 }

@@ -20,6 +20,12 @@ Route::get('/contact', 'PagesController@contact');
 Route::get('/upload', 'UploadController@uploadForm');
 Route::post('/upload', 'UploadController@uploadSubmit');
 
+Route::get('/project', 'ProjectsController@new');
+Route::get('/project/{project_id}', 'ProjectsController@load');
+Route::post('/project', 'ProjectsController@save');
+Route::post('/project/{project_id}', 'ProjectsController@save');
+Route::delete('/project/{project_id}', 'ProjectsController@delete');
+
 
 Auth::routes();
 Route::get('/dashboard', 'DashboardController@index');
